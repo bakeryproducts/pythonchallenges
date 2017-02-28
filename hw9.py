@@ -1,19 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import random
 x = np.linspace(0,5)
 
 y = np.cos(x)
 f = np.exp(-x)*np.sin(4*x)
 g = np.exp(-x)*np.cos(4*x)
 
-plt.plot(x,f,'r',linewidth=5)
-plt.plot(x,g,'b')
+plt.plot(x,f,'r',linewidth=5,label='$ e^{-x} \sin(4x) $')
+plt.plot(x,g,'b',label='$ e^{-x} cos(4x) $')
 plt.ylabel('f')
 plt.xlabel('x')
 plt.title('HW9 at apmonitor.com')
-
-plt.show()
+plt.legend()
+#plt.show()
 
 x = np.linspace(0,10,10)
 y1=x
@@ -38,6 +38,24 @@ plt.title('i am function 3')
 plt.subplot(2,2,4)
 plt.plot(x,y4,'ks')
 plt.title('i am function 4')
+
+#plt.savefig('foo.png', bbox_inches='tight')
+#plt.show()
+
+plt.figure()
+x = np.arange(0,100)
+y = np.zeros(x.size)
+z = np.zeros(x.size)
+
+for i in range(x.size):
+    y[i] = 2* x[i] + 50*random.random()
+    z[i] =250* random.random() -2*x[i]
+
+plt.plot(x,y,'ro',markersize=3)
+plt.plot(x,z,'bs')
+plt.xlim(0,50)
+plt.ylim(0,200)
+#plt.axes([0,0,10,10])
 
 plt.show()
 
