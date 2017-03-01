@@ -76,3 +76,6 @@ c=a@b
 print(c)
 
 
+z= np.arange(11)
+z[(3<z) & (z<8)]*=-1
+print(z)
